@@ -3,6 +3,15 @@
 *::after {
   box-sizing: border-box;
 }
+
+.burger-button {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
 h1,
 h2,
 h3,
@@ -13,9 +22,9 @@ ul {
 }
 
 .container {
-  width: 100%;
-  padding: 0 16px;
-  margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
 body {
@@ -195,15 +204,16 @@ h2 {
 
 .footer .container {
   display: flex;
+  flex-wrap: wrap;
+  
 }
 
 .footer-social-item {
-  margin-left: 120px;
+  
 }
 
 .footer ul {
-  padding: 0;
-  margin: 0;
+
 }
 
 .footer li {
@@ -211,6 +221,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  
 }
 
 .footer-icons {
@@ -286,8 +297,16 @@ h2 {
 }
 
 
-.hero {
+.hero .container {
   background-color: #2e2f42;
+  padding: 188px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 188px 0;
   background-image:
     linear-gradient(rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)),
@@ -297,19 +316,7 @@ h2 {
   background-size: cover;
 }
 
-.hero h1 {
-  max-width: 216px;
-  text-align: center;
-  font-size: 36px;
-}
 
-.hero .container {
-  padding: 72px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 72px;
-}
 
 .team {
   background-color: #f4f4fd;
@@ -322,7 +329,8 @@ h2 {
 
 .team .ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
 }
@@ -370,14 +378,13 @@ a {
 
 .features {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: 120px 0;
 }
 
 .features .ul {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 24px;
 }
 
@@ -388,11 +395,14 @@ a {
 
 .features li {
   list-style: none;
+  max-width: 262px;
 }
 
 .features p {
   margin-top: 8px;
 }
+
+
 
 .visually-hidden {
   position: absolute;
@@ -432,7 +442,7 @@ a {
 .portfolio .ul {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   gap: 30px;
 }
@@ -513,6 +523,7 @@ a {
   padding-bottom: 24px;
   padding-top: 24px;
   margin: 0 auto;
+  display: none;
 }
 
 .image-wrapper {
@@ -796,12 +807,14 @@ a {
 
 .subscription-form-wrapper {
   display: flex;
+  flex-wrap: wrap;
   margin-left: 80px;
 }
 
 .subscription-form {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
@@ -849,255 +862,6 @@ a {
 }
 
 
-/* ================= HEADER ================= */
-
-.header {
-  border-bottom: 1px solid #e7e9fc;
-}
-
-.header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px;
-}
-
-/* Logo */
-.logo {
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  text-decoration: none;
-  color: #2e2f42;
-}
-
-.logo-web {
-  color: #4d5ae5;
-}
-
-/* Desktop nav mobile'da gizli */
-.nav,
-.nav-info {
-  display: none;
-}
-
-/* ================= BURGER ================= */
-
-.burger-button {
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.burger-button svg {
-  fill: #2e2f42;
-}
-
-/* ================= MOBILE MENU ================= */
-
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100vh;
-
-  background-color: #ffffff;
-
-  transform: translateX(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  z-index: 1000;
-}
-
-.mobile-menu.is-open {
-  transform: translateX(0);
-}
-
-.mobile-menu-container {
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 72px 24px 40px;
-}
-
-/* Close Button */
-
-.menu-close-btn {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-
-  width: 32px;
-  height: 32px;
-
-  border-radius: 50%;
-  border: 1px solid #e7e9fc;
-  background-color: #ffffff;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: pointer;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.menu-close-btn:hover,
-.menu-close-btn:focus {
-  background-color: #404bbf;
-}
-
-.menu-close-btn svg {
-  fill: #2e2f42;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.menu-close-btn:hover svg {
-  fill: #ffffff;
-}
-
-/* ================= MOBILE NAV ================= */
-
-.mobile-nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.mobile-nav-link {
-  font-size: 36px;
-  font-weight: 700;
-  color: #2e2f42;
-  text-decoration: none;
-
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mobile-nav-link:hover,
-.mobile-nav-link:focus,
-.mobile-nav-link.current {
-  color: #404bbf;
-}
-
-/* ================= CONTACTS ================= */
-
-.mobile-contacts {
-  margin-top: auto;
-  font-style: normal;
-}
-
-.mobile-contacts-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.mobile-phone {
-  font-size: 24px;
-  font-weight: 700;
-  color: #4d5ae5;
-  text-decoration: none;
-}
-
-.mobile-email {
-  font-size: 20px;
-  color: #434455;
-  text-decoration: none;
-}
-
-/* ================= SOCIAL ================= */
-
-.mobile-social-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 48px;
-
-  display: flex;
-  gap: 40px;
-}
-
-.mobile-social-link {
-  width: 40px;
-  height: 40px;
-
-  background-color: #4d5ae5;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mobile-social-link:hover,
-.mobile-social-link:focus {
-  background-color: #404bbf;
-}
-
-.mobile-social-link svg {
-  fill: #ffffff;
-}
-
-/* ================= DESKTOP ================= */
-
-@media (min-width: 768px) {
-
-  .burger-button {
-    display: none;
-  }
-
-  .nav,
-  .nav-info {
-    display: block;
-  }
-
-  .nav {
-    margin-left: 76px;
-  }
-
-  .nav .ul {
-    display: flex;
-    gap: 40px;
-  }
-
-  .nav-info {
-    margin-left: auto;
-  }
-
-  .nav-info .ul {
-    display: flex;
-    gap: 40px;
-  }
-
- 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1113,7 +877,11 @@ BURADAN SONRASI DESKTOP! KARIŞTIRMA!
 ====================================
 */
 
-@media screen and (min-width: 1158px) {
+
+
+
+
+@media (min-width: 1158px) {
 
     .burger-button {
       display: none;
@@ -1135,6 +903,7 @@ ul {
 .container {
   max-width: 1158px;
   margin: 0 auto;
+  padding: 0;
 }
 
 body {
@@ -1321,8 +1090,6 @@ margin-left: 120px;
 }
 
 .footer ul {
-  padding: 0;
-  margin: 0;
 }
 
 .footer li {
@@ -1330,6 +1097,7 @@ margin-left: 120px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  
 }
 
 .footer-icons {
@@ -1439,8 +1207,8 @@ margin-left: 120px;
 
 .team .ul {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 24px;
 }
 
@@ -1495,6 +1263,7 @@ a {
 .features .ul {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 24px;
 }
 
@@ -1629,7 +1398,7 @@ rgba(46, 47, 66, 0.16);
   align-items: center;
   padding-bottom: 24px;
   padding-top: 24px;
-  margin: 0 auto;
+  margin: 0 auto;   
 }
 
 .image-wrapper {
