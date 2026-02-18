@@ -4,13 +4,7 @@
   box-sizing: border-box;
 }
 
-.burger-button {
-  display: none;
-}
 
-.mobile-menu {
-  display: none;
-}
 
 h1,
 h2,
@@ -69,6 +63,8 @@ img {
 .header .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 16px;
 }
 
 .nav .ul {
@@ -91,6 +87,7 @@ img {
 
 .nav-info {
   margin-left: auto;
+  display: none;
 }
 
 .ul {
@@ -99,6 +96,7 @@ img {
 
 .nav {
   margin-left: 76px;
+  display: none;
 }
 
 .nav a,
@@ -208,9 +206,7 @@ h2 {
   justify-content: center;
 }
 
-.footer-social-item {
-  
-}
+
 
 .footer ul {
 
@@ -275,6 +271,8 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-left: none;
+  margin-right: none;
 }
 
 .footer-icons {
@@ -299,11 +297,11 @@ h2 {
 
 .hero .container {
   background-color: #2e2f42;
-  padding: px 0;
+  padding: 72px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+  gap: 72px;
   max-width: 1440px;
   margin: 0 auto;
   background-image:
@@ -331,7 +329,7 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+  gap: 72px;
 }
 
 .team .card {
@@ -400,7 +398,6 @@ a {
 }
 
 .features p {
-  margin-top: 8px;
 }
 
 
@@ -445,7 +442,7 @@ a {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  gap: 30px;
+  gap: 72px;
 }
 
 .portfolio h2 {
@@ -606,12 +603,12 @@ a {
 
 .modal {
   position: relative;
-  width: 408px;
+  width: 288px;
   background-color: #ffffff;
   border-radius: 4px;
   transform: scale(0.9);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 0 24px 24px 24px;
+  padding: 0px 16px 24px 16px;
 }
 
 .backdrop.is-open .modal {
@@ -809,7 +806,6 @@ a {
 .subscription-form-wrapper {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 80px;
 }
 
 .subscription-form {
@@ -862,6 +858,154 @@ a {
 .footer-list {
   display: flex;
 }
+
+/* ================= BURGER BUTTON ================= */
+
+.burger-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.burger-button svg {
+  fill: #2e2f42;
+}
+
+/* ================= MOBILE MENU ================= */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  transform: translateX(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+/* Açık state */
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+/* İç container */
+.mobile-menu-container {
+  position: relative;
+  height: 100%;
+  padding: 72px 24px 40px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+.menu-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #E7E9FC ;
+  width: 24px;
+  height: 24px;
+}
+
+.menu-close-btn svg {
+  fill: #2e2f42;
+}
+
+/* ================= MOBILE NAV ================= */
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mobile-nav-link {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2e2f42;
+  text-decoration: none;
+}
+
+.mobile-nav a {
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus {
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #404BBF
+}
+
+/* ================= CONTACTS ================= */
+
+.mobile-contacts {
+  margin-top: auto;
+  font-style: normal;
+}
+
+.mobile-contacts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  color: #434455;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.mobile-contacts-list a:hover,
+.mobile-contacts-list a:focus {
+  color: #4D5AE5 ;
+}
+
+
+
+/* ================= SOCIAL ================= */
+
+.mobile-social-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 48px;
+  display: flex;
+  gap: 40px;
+}
+
+.mobile-social-link {
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.mobile-social-link svg {
+  fill: #ffffff;
+}
+
+
+
+.mobile-social-link:hover,
+.mobile-social-link:focus {
+  background-color: #31D0AA;
+}
+
 
 
 
@@ -950,6 +1094,8 @@ img {
 .header .container {
   display: flex;
   align-items: center;
+  justify-content: none;
+  padding: 0;
 }
 
 .nav .ul {
@@ -972,6 +1118,7 @@ img {
 
 .nav-info {
   margin-left: auto;
+  display: block;
 }
 
 .ul {
@@ -980,6 +1127,7 @@ img {
 
 .nav {
   margin-left: 76px;
+  display: block
 }
 
 .nav a,
@@ -1088,9 +1236,7 @@ h2 {
   gap: 0;
 }
 
-.footer-social-item {
-margin-left: 120px;
-}
+
 
 .footer ul {
 }
@@ -1131,8 +1277,11 @@ margin-left: 120px;
 
 .footer p {
   color: #e7e9fc;
-  width: 264px;
   margin: 0;
+}
+
+.text-footer-desc {
+  max-width: 264px;
 }
 
 .footer a {
@@ -1154,6 +1303,8 @@ margin-left: 120px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-left: 120px;
+  margin-right: 80px;
 }
 
 .footer-icons {
@@ -1491,7 +1642,7 @@ rgba(46, 47, 66, 0.16);
   border-radius: 4px;
   transform: scale(0.9);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 0 24px 24px 24px;
+  padding: 0px 24px 16px 16px;
 }
 
 .backdrop.is-open .modal {
@@ -1688,10 +1839,9 @@ rgba(46, 47, 66, 0.16);
 
 .subscription-form-wrapper {
   display: flex;
-  margin-left: 80px;
 }
 
-.subscription-form {
+.subscription-form li {
   display: flex;
   align-items: center;
   gap: 16px;
